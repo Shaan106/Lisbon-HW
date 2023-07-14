@@ -16,9 +16,12 @@ const movies = [
 
 
 let currentRandMovieIndex = Math.floor(Math.random() * 100);
+let currentScore = 0;
 
 let movieDesc = document.getElementById("movie-description");
 let hintText = document.getElementById("hint-text");
+let scoreDisplay = document.getElementById("score-display");
+let borderDiv = document.getElementById("border-div");
 
 let userGuess = document.getElementById("guess-text");
 
@@ -33,9 +36,25 @@ document.querySelector('#guess-button').addEventListener('click', () => {
 
     if (userGuess.value.toLowerCase() === movies[currentRandMovieIndex % movies.length].title.toLowerCase()) {
         console.log("CORRECT")
+
+        borderDiv.classList.remove("border-dark");
+        borderDiv.classList.remove("border-danger");
+        borderDiv.classList.add("border-success");
+
+        //changing the movie
+        currentRandMovieIndex = Math.floor(Math.random() * 100);
+        movieDesc.innerHTML = movies[currentRandMovieIndex % movies.length].explanation;
+
         hintText.innerHTML = null;
+        currentScore = currentScore + 1;
+        scoreDisplay.innerHTML = `Score: ${currentScore}`;
         return;
     }
+
+    borderDiv.classList.remove("border-dark");
+    borderDiv.classList.remove("border-success");
+    borderDiv.classList.add("border-danger");
+    
     console.log("WRONG");
 });
 

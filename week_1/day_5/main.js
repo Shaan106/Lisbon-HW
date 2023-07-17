@@ -12,7 +12,7 @@ document.querySelector('#add-task-button').addEventListener('click', () => {
     let newDelButton = document.createElement('td');
 
     newTask.innerHTML = taskInfo.value;
-    newCheckbox.innerHTML = `<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>`;
+    newCheckbox.innerHTML = `<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" unchecked>`;
     newDelButton.innerHTML = `<button type="button" class="btn-close" aria-label="Close"></button>`;
 
     tr.appendChild(newTask);

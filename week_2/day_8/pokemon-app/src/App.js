@@ -38,13 +38,17 @@ function App() {
 
   return (
     <div className="text-center">
+
+      <div>Can add a text field here to choose pokemon</div>
+
       <button className="btn btn-primary mt-3" onClick={fetchPokemon}>
-        Fetch Posts
+        Fetch Pokemon
       </button>
 
       <div>
         <div>{pokeInfo.id}</div>
       </div>
+
       
       <div>
         <div>{pokeSpecies.name}</div>
